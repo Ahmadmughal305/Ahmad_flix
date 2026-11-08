@@ -89,6 +89,11 @@ document.querySelectorAll('.movie').forEach(card => {
   card.addEventListener('click', () => {
     const title = card.querySelector('h3')?.innerText || 'Movie Details';
     document.getElementById('detailTitle').innerText = title;
+    const info = movieInfo[title];
+if (info) {
+  document.getElementById('detailDescription').innerHTML =
+    `<b>Story:</b> ${info.story}<br><b>Year:</b> ${info.year}<br><b>IMDb:</b> ${info.rating}<br><a href="${info.trailer}" target="_blank" style="color:#d4af37;">▶ Watch Official Trailer</a>`;
+}
     document.getElementById('movieDetails').style.display = 'block';
   });
 });

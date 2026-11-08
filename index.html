@@ -10,28 +10,38 @@
 body{background:#090909;color:white;font-family:Arial,sans-serif}
 header{padding:22px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #302719}
 .logo{font-size:25px;font-weight:bold;color:#d8b45b;letter-spacing:2px}
-nav a{color:#eee;text-decoration:none;margin-left:15px;font-size:13px}
-.hero{padding:75px 7%;background:linear-gradient(90deg,#090909,#18140d,#090909);min-height:300px;display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:42px;color:#e2c16b;margin-bottom:15px}
+nav a{color:#eee;text-decoration:none;margin-left:12px;font-size:13px}
+.hero{padding:65px 7%;background:linear-gradient(90deg,#090909,#18140d,#090909);min-height:280px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:38px;color:#e2c16b;margin-bottom:15px}
 .hero p{color:#bbb;max-width:450px;line-height:1.6}
 .btn{background:#d2ad54;color:#090909;padding:12px 22px;border:0;border-radius:5px;font-weight:bold;margin-top:20px;width:max-content}
 .search{padding:20px 5%}
 input{width:100%;padding:14px;background:#171717;border:1px solid #705b30;border-radius:7px;color:white}
 section{padding:20px 5%}
 h2{color:#d8b45b;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
 .movie{background:#171717;border:1px solid #292319;border-radius:8px;overflow:hidden;cursor:pointer}
-.movie img{width:100%;height:155px;object-fit:cover}
-.movie h3{font-size:13px;padding:9px 7px}
+.movie img{width:100%;height:190px;object-fit:cover}
+.movie h3{font-size:14px;padding:9px 7px}
 .movie p{font-size:11px;color:#aaa;padding:0 7px 10px}
 footer{text-align:center;padding:30px;color:#a99464;border-top:1px solid #302719;margin-top:30px}
+#movieDetails{display:none;position:fixed;inset:0;background:#000e;z-index:9999;padding:20px;overflow:auto}
+.detailBox{max-width:600px;margin:35px auto;background:#151515;border:1px solid #d4af37;border-radius:15px;padding:22px;color:white}
+.detailBox p{line-height:1.7;margin:12px 0;color:#ddd}
+.detailBox a{display:inline-block;margin-top:15px;background:#d2ad54;color:#090909;text-decoration:none;padding:12px 18px;border-radius:5px;font-weight:bold}
+.close{float:right;background:#d4af37;border:0;padding:9px 14px;border-radius:4px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(5,1fr)}.movie img{height:230px}}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo">AHMAD FLIX</div>
-<nav><a href="#">Home</a><a href="#movies">Movies</a><a href="#series">Series</a></nav>
+<nav>
+<a href="#">Home</a>
+<a href="#movies">Movies</a>
+<a href="#series">Series</a>
+</nav>
 </header>
 
 <div class="hero">
@@ -46,13 +56,38 @@ footer{text-align:center;padding:30px;color:#a99464;border-top:1px solid #302719
 
 <section id="movies">
 <h2>🔥 Trending Movies</h2>
-<div class="grid" id="movieGrid">
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"><h3>Oppenheimer</h3><p>Movie • 2023</p></div>
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"><h3>Mad Max: Fury Road</h3><p>Movie • 2015</p></div>
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"><h3>Interstellar</h3><p>Movie • 2014</p></div>
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"><h3>Joker</h3><p>Movie • 2019</p></div>
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"><h3>Wonder Woman</h3><p>Movie • 2020</p></div>
-<div class="movie"><img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg"><h3>Dragon Ball Super</h3><p>Series</p></div>
+<div class="grid">
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg">
+<h3>Oppenheimer</h3><p>Movie • 2023</p>
+</div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg">
+<h3>Mad Max: Fury Road</h3><p>Movie • 2015</p>
+</div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg">
+<h3>Interstellar</h3><p>Movie • 2014</p>
+</div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg">
+<h3>Joker</h3><p>Movie • 2019</p>
+</div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg">
+<h3>Wonder Woman</h3><p>Movie • 2020</p>
+</div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg">
+<h3>Dragon Ball Super</h3><p>Series • 2015</p>
+</div>
+
 </div>
 </section>
 
@@ -63,27 +98,58 @@ footer{text-align:center;padding:30px;color:#a99464;border-top:1px solid #302719
 
 <footer>© 2026 AHMAD FLIX | All Rights Reserved</footer>
 
-<div id="movieDetails" style="display:none;position:fixed;inset:0;background:#000e;z-index:9999;padding:25px;overflow:auto;">
-<div style="background:#151515;border:1px solid #d4af37;border-radius:15px;padding:20px;color:white;">
-<button onclick="document.getElementById('movieDetails').style.display='none'" style="float:right;background:#d4af37;border:0;padding:8px 15px;">✕</button>
-<h2 id="detailTitle" style="color:#d4af37;"></h2>
-<div id="detailDescription">Movie details coming soon.</div>
-<button onclick="document.getElementById('movieDetails').style.display='none'" style="background:#d4af37;padding:10px 20px;border:0;border-radius:6px;margin-top:20px;">Close</button>
+<div id="movieDetails">
+<div class="detailBox">
+<button class="close" onclick="closeDetails()">✕</button>
+<h2 id="detailTitle" style="margin-top:35px"></h2>
+<div id="detailDescription"></div>
+<button class="btn" onclick="closeDetails()">Close</button>
 </div>
 </div>
 
 <script>
 const movieInfo = {
-"Oppenheimer": {
-story:"The story of J. Robert Oppenheimer, the scientist who led the development of the first atomic bomb during World War II.",
-year:"2023",
-rating:"8.3/10",
+
+"Oppenheimer":{
+story:"A brilliant physicist leads the secret Manhattan Project to develop the first atomic bomb during World War II, while facing the moral consequences of his work.",
+year:"2023",rating:"8.3/10",
 trailer:"https://www.youtube.com/results?search_query=Oppenheimer+official+trailer"
+},
+
+"Mad Max: Fury Road":{
+story:"In a post-apocalyptic desert, Max joins Furiosa as she tries to escape a tyrannical warlord and his forces.",
+year:"2015",rating:"8.1/10",
+trailer:"https://www.youtube.com/results?search_query=Mad+Max+Fury+Road+official+trailer"
+},
+
+"Interstellar":{
+story:"A team of explorers travels through a wormhole in search of a new home for humanity as Earth becomes increasingly uninhabitable.",
+year:"2014",rating:"8.7/10",
+trailer:"https://www.youtube.com/results?search_query=Interstellar+official+trailer"
+},
+
+"Joker":{
+story:"A struggling comedian in Gotham City faces rejection and hardship as his life takes a dark turn toward becoming the Joker.",
+year:"2019",rating:"8.3/10",
+trailer:"https://www.youtube.com/results?search_query=Joker+2019+official+trailer"
+},
+
+"Wonder Woman":{
+story:"Diana, an Amazon princess, leaves her island home to help stop a devastating war and discovers her extraordinary powers.",
+year:"2020",rating:"7.4/10",
+trailer:"https://www.youtube.com/results?search_query=Wonder+Woman+1984+official+trailer"
+},
+
+"Dragon Ball Super":{
+story:"Goku and his friends face powerful rivals and cosmic threats after the battle with Majin Buu, including gods and fighters from other universes.",
+year:"2015",rating:"8.3/10",
+trailer:"https://www.youtube.com/results?search_query=Dragon+Ball+Super+official+trailer"
 }
+
 };
 
 function filterMovies(){
-let q=document.getElementById('search').value.toLowerCase();
+const q=document.getElementById('search').value.toLowerCase();
 document.querySelectorAll('.movie').forEach(m=>{
 m.style.display=m.innerText.toLowerCase().includes(q)?'block':'none';
 });
@@ -92,17 +158,24 @@ m.style.display=m.innerText.toLowerCase().includes(q)?'block':'none';
 document.querySelectorAll('.movie').forEach(card=>{
 card.addEventListener('click',()=>{
 const title=card.querySelector('h3').innerText;
-document.getElementById('detailTitle').innerText=title;
 const info=movieInfo[title];
-if(info){
+
+document.getElementById('detailTitle').innerText=title;
+
 document.getElementById('detailDescription').innerHTML=
-'<p><b>Story:</b> '+info.story+'</p><p><b>Year:</b> '+info.year+'</p><p><b>IMDb:</b> '+info.rating+'</p><p><a href="'+info.trailer+'" target="_blank" style="color:#d4af37;">▶ Watch Trailer</a></p>';
-}else{
-document.getElementById('detailDescription').innerText='More details coming soon.';
-}
+'<p><b>Story:</b> '+info.story+'</p>'+
+'<p><b>Release Year:</b> '+info.year+'</p>'+
+'<p><b>IMDb Rating:</b> '+info.rating+' (approx.)</p>'+
+'<a href="'+info.trailer+'" target="_blank" rel="noopener">▶ Watch Trailer</a>';
+
 document.getElementById('movieDetails').style.display='block';
 });
 });
+
+function closeDetails(){
+document.getElementById('movieDetails').style.display='none';
+}
 </script>
+
 </body>
 </html>

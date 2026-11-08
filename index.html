@@ -76,7 +76,7 @@ m.style.display=m.innerText.toLowerCase().includes(q)?'block':'none';
 </div>
 
 <script>
-document.querySelectorAll('.movie-card').forEach(card => {
+document.querySelectorAll('.movie').forEach(card => {
   card.style.cursor = 'pointer';
   card.addEventListener('click', () => {
     const title = card.querySelector('h3')?.innerText || 'Movie Details';

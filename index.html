@@ -75,7 +75,15 @@ m.style.display=m.innerText.toLowerCase().includes(q)?'block':'none';
   </div>
 </div>
 
-<script>
+const movieInfo = {
+  "Oppenheimer": {
+    story: "The story of J. Robert Oppenheimer, the scientist who led the development of the first atomic bomb during World War II.",
+    year: "2023",
+    rating: "8.3/10",
+    trailer: "https://www.youtube.com/results?search_query=Oppenheimer+official+trailer"
+  }
+};
+  <script>
 document.querySelectorAll('.movie').forEach(card => {
   card.style.cursor = 'pointer';
   card.addEventListener('click', () => {
